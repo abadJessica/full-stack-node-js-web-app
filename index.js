@@ -11,7 +11,7 @@ const __dirname = import.meta.dirname;
 
 // create express app
 const app = express();
-const port = process.env.PORT || "8888";
+const port = process.env.PORT || 8888;
 
 // set up Pug template engine
 app.set("views", path.join(__dirname, "views"));
