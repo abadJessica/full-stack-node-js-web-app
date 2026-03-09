@@ -1,0 +1,10 @@
+extends ../common/layout
+
+block layout-content
+  h1 Admin Dashboard
+  nav
+    ul
+      li: a(href="/admin/properties") Manage Properties
+      li: a(href="/admin/agents") Manage Agents
+      li: a(href="/logout") Logout
+  h3 Welcome back, #{user.user}!

@@ -1,0 +1,11 @@
+header#header 
+  h2#site-name 
+    a(href="/") Real Estate Admin
+  div 
+    if (user)
+      nav(aria-label="User menu")
+        ul 
+          li: a(href="/user") Account 
+          li: a(href="/logout") Logout 
+    else 
+      a(href="/login") Login

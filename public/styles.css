@@ -1,0 +1,16 @@
+body {
+    color:#fff;
+    background-color: #22282b;;
+  }
+  a {
+    color:#cda116;
+  }
+  a.button, button {
+    background-color:#cda116;
+    color:#000;
+    font-family: Arial, sans-serif;
+    text-decoration:none;
+    display:inline-block;
+    padding:0.5em 0.8em;
+    border-radius:0.3em;
+  }

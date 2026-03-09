@@ -1,0 +1,27 @@
+extends ../common/layout
+
+block layout-content
+  h1 Manage Agents
+
+  //- Add new agent form
+  form(method="POST", action="/admin/agents/add")
+    label(for="name") Name:
+    input(type="text", name="name", id="name", required)
+    br
+    label(for="contact") Contact:
+    input(type="text", name="contact", id="contact", required)
+    br
+    label(for="activeListings") Active Listings:
+    input(type="number", name="activeListings", id="activeListings", value=0)
+    br
+    button(type="submit") Add Agent
+
+  hr
+
+  h2 Existing Agents
+  each agent in agents
+    div.agent-card
+      p Name: #{agent.name}
+      p Contact: #{agent.contact}
+      p Active Listings: #{agent.activeListings}
+      a(href=`/admin/agents/delete/${agent._id}`) Delete

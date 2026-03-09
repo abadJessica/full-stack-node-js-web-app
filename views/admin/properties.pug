@@ -1,0 +1,35 @@
+extends ../common/layout
+
+block layout-content
+  h1 Manage Properties
+
+  //- Add new property form
+  form(method="POST", action="/admin/properties/add")
+    label(for="address") Address:
+    input(type="text", name="address", id="address", required)
+    br
+    label(for="type") Type:
+    select(name="type", id="type")
+      option(value="residential") Residential
+      option(value="commercial") Commercial
+    br
+    label(for="price") Price:
+    input(type="number", name="price", id="price", required)
+    br
+    label(for="status") Status:
+    select(name="status", id="status")
+      option(value="available") Available
+      option(value="sold") Sold
+    br
+    button(type="submit") Add Property
+
+  hr
+
+  h2 Existing Properties
+  each property in properties
+    div.property-card
+      p Address: #{property.address}
+      p Type: #{property.type}
+      p Price: $#{property.price}
+      p Status: #{property.status}
+      a(href=`/admin/properties/delete/${property._id}`) Delete
